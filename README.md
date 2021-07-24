@@ -1,3 +1,16 @@
+# To make changes
+## 1
+```
+In config.env file add
+1. MongoDB link
+2. DB Password
+3. DB Username
+```
+## 2
+```
+In server.js file change path to ./config.env
+```
+
 # To run
 ```
 npm install
