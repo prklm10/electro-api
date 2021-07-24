@@ -1,17 +1,18 @@
-// To run
-
+# To run
+```
 npm install
 npm start
+```
 
 
 
 
+# API Documentation
 
-// API Documentation
+## FOR USERS
 
-//FOR USERS
-
-// To add new Complaints
+### To add new Complaints
+```
 POST request /api/v1/shop
 DATA
 {
@@ -22,7 +23,9 @@ DATA
     "address": String Required
     "pincode": Number Required
 }
-If successful
+```
+### If successful
+```
 response from server :
 status code: 201
 {
@@ -31,14 +34,17 @@ status code: 201
     customerData (That data that you have posted)
     }
 }
-If unsuccessful
+```
+### If unsuccessful
+```
 status 400
 {
     status: 'Fail',
     message: err.message,
 }
-
-//To get complaints of users
+```
+### To get complaints of users
+```
 GET request /api/v1/shop/<PHONENUMBER>
 user phoneNumber
 if phoneNumber is present then User will receive all his Complaints
@@ -53,37 +59,44 @@ DATA
     "resolved": Boolean
     "createdAt": DATE
 }
-if phone Number is not present then
+```
+### if phone Number is not present then
+```
 DATA
 {
     "status": "Fail",
     "message": "Page not found" 
 }
+```
+# FOR ADMINS
 
-// FOR ADMINS
-
-//To Login
-
+## To Login
+```
 POST request at /api/v1/shop/admin/user/login
 DATA
 {
     "username": String Required
     "password": String Required
 }
-IF successful LOGIN
+```
+### IF successful LOGIN
+```
 Response from server
 {
     status: 'Ok',
     message: 'Login Successful',
 }
-If unsuccessful LOGIN
+```
+### If unsuccessful LOGIN
+```
 status: 403
 {
     status: 'Fail',
     message: err.message,
 }
-// To show all Complaints
-
+```
+### To show all Complaints
+```
 GET request at /api/v1/shop/admin/
 DATA
 {
@@ -96,14 +109,17 @@ DATA
     "resolved": Boolean
     "createdAt": DATE
 }
-
-// To resolve a complaints
+```
+### To resolve a complaints
+```
 POST request at /api/v1/shop/admin/<ID>
 ID of that complaint
 {
 "resolved": true
 }
-If successful
+```
+### If successful
+```
 RESPONSE From server
 {
     status: 'Ok',
@@ -111,9 +127,11 @@ RESPONSE From server
     customerData
     }   
 }
-if unsuccessful
+```
+### if unsuccessful
+```
 {
     status: 'Fail',
     message: err.message
 }
-
+```
